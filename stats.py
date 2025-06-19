@@ -15,4 +15,16 @@ def number_each_time_characters_appear(text):
             characters_dict[character] += 1
         
     return characters_dict
-            
+
+
+def take_dict_of_charac_and_return_sorted_list_of_dict(dict):
+    list_of_dictionaries = []
+    
+    for key, value in dict.items():
+        if key.isalpha():
+            new_dict = {f"char": key, "num": value}
+            list_of_dictionaries.append(new_dict)
+    
+    list_of_dictionaries.sort(reverse=True, key=lambda item: item["num"])
+    
+    return list_of_dictionaries
